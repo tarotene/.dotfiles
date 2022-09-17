@@ -1,13 +1,14 @@
 [credential]
-helper = /usr/local/share/gcm-core/git-credential-manager-core
+helper = /opt/homebrew/bin/gcm-core/git-credential-manager-core
 
 [user]
 name = Kentaro Sugimoto
 email = tarotene.dev@gmail.com
-signingkey = 9B8CCAD4F4B007B4!
+signingkey = B0B9F77CB67A7E53
 
 [gpg]
-program = /usr/local/bin/gpg
+# NOTE: Should be the result of `which gpg`
+program = /opt/homebrew/bin/gpg
 
 [gpg "ssh"]
 program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
