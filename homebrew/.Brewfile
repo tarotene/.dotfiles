@@ -1,100 +1,53 @@
-# [tap]
-
-# -- Public clouds
 tap "aws/tap"
-
-# -- Google
-tap "google/verible"
-
-# -- Homebrew
 tap "homebrew/bundle"
+tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
-
-# -- Version control systems
 tap "microsoft/git"
-
-# [brew]
-
-# -- Build tools
-brew "cmake"
-
-# -- Compression
-brew "xz"
-
-# -- Databases
-brew "sqlite"
-brew "berkeley-db"
-
-# -- GNU Arm compilers
-brew "gcc-arm-embedded"
-
-# -- GNU tools
 brew "autoconf"
 brew "automake"
-brew "binutils"
-brew "bison"
 brew "coreutils"
-brew "gettext"
 brew "libtool"
-brew "moreutils"
-brew "parallel"
 brew "readline"
-brew "stow"
-
-# -- GNOME tools
+brew "asdf"
+brew "asn1c"
+brew "gettext"
 brew "glib"
 brew "atk"
-
-# -- Language runtime managers
-brew "asdf"
-
-# -- On-shell utils.
-brew "bat"
-
-# -- Public clouds
-brew "aws-google-auth"
-brew "awscli"
-
-# -- Python
-brew "python@3.10"
-brew "pillow"
-
-# -- Shells
-brew "tcl-tk"
-brew "bash"
-
-# -- Shell plugin managers
-brew "sheldon"
-
-# -- Miscellaneous (unorganizable)
-brew "batik"
-brew "bzip2"
+brew "pkg-config"
 brew "cairo"
 brew "harfbuzz"
 brew "libraqm"
-brew "pkg-config"
-
-# -- !Unorganized
-brew "asn1c"
+brew "tcl-tk"
+brew "pillow"
+brew "sqlite"
+brew "xz"
+brew "python@3.10"
+brew "aws-google-auth"
+brew "awscli"
+brew "bash"
+brew "bat"
+brew "batik"
 brew "bazel"
+brew "berkeley-db"
+brew "binutils"
+brew "bison"
+brew "bzip2"
 brew "ccache"
 brew "ccat"
+brew "circleci"
+brew "cmake"
 brew "cmake-docs"
 brew "colordiff"
 brew "cppcheck"
 brew "cpputest"
-brew "circleci"
 brew "datamash"
 brew "dfu-util"
 brew "difftastic"
 brew "direnv"
 brew "djvu2pdf"
-brew "docker"
-brew "docker-clean"
 brew "doxygen"
 brew "dtc"
 brew "eigen"
@@ -110,7 +63,6 @@ brew "fontforge"
 brew "fop"
 brew "gawk"
 brew "gcc"
-brew "gdb"
 brew "gdk-pixbuf"
 brew "gh"
 brew "ghq"
@@ -121,7 +73,6 @@ brew "gitlint"
 brew "glog"
 brew "glow"
 brew "gnu-sed"
-brew "graphviz"
 brew "pinentry"
 brew "gnupg"
 brew "gobject-introspection"
@@ -138,25 +89,26 @@ brew "hub"
 brew "hugo"
 brew "shared-mime-info"
 brew "libheif"
-brew "libmodbus"
 brew "imagemagick"
 brew "llvm"
 brew "include-what-you-use"
 brew "iproute2mac"
 brew "john"
 brew "jq"
+brew "kaitai-struct-compiler"
 brew "libiconv"
 brew "libmagic"
+brew "libmodbus"
 brew "libslirp"
 brew "libzip"
 brew "lrzsz"
 brew "lsusb"
 brew "lxc"
-brew "kaitai-struct-compiler"
 brew "mas"
 brew "mercurial"
 brew "minicom"
 brew "minimal-racket"
+brew "moreutils", link: false
 brew "mosquitto"
 brew "zlib"
 brew "mysql-client"
@@ -172,6 +124,7 @@ brew "pkcs11-helper"
 brew "openvpn"
 brew "p7zip"
 brew "pandoc"
+brew "parallel"
 brew "peco"
 brew "picocom"
 brew "pinentry-mac"
@@ -191,36 +144,37 @@ brew "remake"
 brew "rlwrap"
 brew "ruby"
 brew "rustup-init"
+brew "sheldon"
 brew "shellcheck"
 brew "shfmt"
 brew "shntool"
 brew "srecord"
 brew "starship"
+brew "stow"
 brew "tig"
 brew "tmux"
 brew "tnftp"
 brew "tree"
 brew "u-boot-tools"
 brew "uncrustify"
-brew "verible"
 brew "west"
 brew "wget"
 brew "x86_64-elf-gcc"
 brew "yosys"
 brew "zenity"
 brew "aws/tap/aws-sam-cli"
-
-# [cask]
-
 cask "1password"
 cask "appcleaner"
 cask "dash"
+cask "deepl"
+cask "dotnet"
 cask "fantastical"
 cask "fig"
 cask "flux"
-cask "deepl"
-cask "docker"
-cask "dotnet"
+cask "font-cascadia-code"
+cask "font-fira-code"
+cask "font-ricty-diminished"
+cask "font-terminus"
 cask "ghdl"
 cask "git-credential-manager-core"
 cask "github"
@@ -240,21 +194,15 @@ cask "slack"
 cask "visual-studio"
 cask "visual-studio-code"
 cask "vnc-viewer"
+cask "warp"
 cask "zoom"
-
-# -- Fonts
-cask "font-cascadia-code"
-cask "font-fira-code"
-cask "font-ricty-diminished"
-cask "font-terminus"
-
-# [mas]
-
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
 mas "NordVPN", id: 905953485
 mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
 mas "Quiver", id: 866773894
 mas "RunCat", id: 1429033973
 mas "Sequel Ace", id: 1518036000
-
