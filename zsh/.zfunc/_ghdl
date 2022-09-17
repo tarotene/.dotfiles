@@ -1,0 +1,97 @@
+#compdef _ghdl ghdl
+
+#compdef _poetry poetry
+
+_ghdl_complete() {
+    local com coms cur opts state
+
+    cur=${words[${#words[@]}]}
+
+    # lookup for command
+    for word in ${words[@]:1}; do
+        if [[ $word != -* ]]; then
+            com=$word
+            break
+        fi
+    done
+
+    if [[ ${cur} == --* ]]; then
+        state="option"
+        opts=(
+            "--work:--work=LIB to use LIB as work library, for example"
+            "--workdir:--workdir=DIR to use DIR for the file library, for example"
+            "-P:--PPATH to add PATH in the library path list, for example"
+            "--std=87:select vhdl 87 standard"
+            "--std=93:select vhdl 93 standard"
+            "--std=00:select vhdl 00 standard"
+            "--std=02:select vhdl 02 standard"
+            "--std=08:select vhdl 08 standard"
+            "--std=93c:select vhdl 93 standard and allow 87 syntax"
+            "--vital-checks:check VITAL restrictions"
+            "--no-vital-checks:do not check VITAL restrictions"
+            "-Wbinding:warns for component not bound"
+            "-Wreserved:warns use of 93 reserved words in vhdl87"
+            "-Wlibrary:warns for redefinition of a design unit"
+            "-Wvital-generic:warns of non-vital generic names"
+            "-Wdelayed-checks:warns for checks performed at elaboration"
+            "-Wbody:warns for not necessary package body"
+            "-Wspecs:warns if a all/others spec does not apply"
+            "-Wunused:warns if a subprogram is never used"
+            "-Wall:enables all warnings"
+            "-Werror:turns warnings into errors"
+            "-fexplicit:give priority to explicitly declared operator"
+            "-frelaxed-rules:relax some LRM rules"
+            # TODO: investigate how -C and --mb-comments are related each other
+            "-C --mb-comments:allow multi-bytes chars in a comment"
+            "--bootstrap:allow --work=std"
+            "--syn-binding:use synthesis default binding rule"
+            "-fpsl:parse psl in comments"
+            # TODO: treat multiply-specified version -l[sca] properly
+            "-ls:after semantics"
+            "-lc:after canon"
+            "-la:after annotation"
+            "--lall:-lX options apply to all files"
+            "-lv:verbose list"
+            "-v:disp compilation stages"
+            # TODO: treat multiply-specified version -d[psa] properly
+            "-dp:dump tree after parse"
+            "-ds:dump tree after semantics"
+            "-da:dump tree after annotate"
+            "--dall:-dX options apply to all files"
+            "--dump-drivers:dump processes drivers"
+        )
+    elif [[ $cur == $com ]]; then
+        state="command"
+        coms=(
+            "analyze:Analyze one or multiple VHDL files"
+            "elaborate:Elaborate design UNIT"
+            # TODO: implement the rest part
+        )
+    fi
+
+    case $state in
+    command)
+        _describe 'command' coms
+        ;;
+    option)
+        case "$com" in
+
+        analyze)
+            opts+=()
+            ;;
+        elaborate)
+            opts+=()
+            ;;
+        esac
+
+        _describe 'option' opts
+        ;;
+    *)
+        # fallback to file completion
+        _arguments '*:file:_files'
+        ;;
+    esac
+}
+
+_ghdl_complete "$@"
+compdef _ghdl_complete ghdl

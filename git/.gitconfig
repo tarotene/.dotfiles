@@ -1,0 +1,16 @@
+[credential]
+helper = /usr/local/share/gcm-core/git-credential-manager-core
+
+[user]
+name = Kentaro Sugimoto
+email = tarotene.dev@gmail.com
+signingkey = 9B8CCAD4F4B007B4!
+
+[gpg]
+program = /usr/local/bin/gpg
+
+[gpg "ssh"]
+program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+gpgsign = true

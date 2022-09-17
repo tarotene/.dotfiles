@@ -1,0 +1,6 @@
+{
+    "shellcheck.ignorePatterns": {
+        "zsh/*": true,
+        "zsh/.zfunc/*": true
+    }
+}
