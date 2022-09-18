@@ -73,3 +73,6 @@ gpgconf --launch gpg-agent
 
 # C++ global include path
 export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH:+${CPLUS_INCLUDE_PATH}:}$(brew --prefix)/include/"
+
+# Direnv
+eval "$(direnv hook zsh)"
